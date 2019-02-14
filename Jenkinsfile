@@ -1,16 +1,21 @@
 pipeline {
-  agent {
-    docker {
-      image 'openjdk:8-jdk-alpine'
-      args '-p 5000:5000'
-    }
+    agent any
 
-  }
-  stages {
-    stage('Develop') {
-      steps {
-        sh './gradlew build docker'
-      }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-  }
 }
