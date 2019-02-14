@@ -6,10 +6,20 @@ pipeline {
 
   }
   stages {
-    stage('Develop') {
-      steps {
-        sh './gradlew build docker'
-      }
+        stage('Develop') {
+            steps {
+                echo 'Developing..'
+            }
+        }
+        stage('Stage') {
+            steps {
+                echo 'Staging..'
+            }
+        }
+        stage('Prod') {
+            steps {
+                echo 'Production....'
+            }
+        }
     }
-  }
 }
